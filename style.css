@@ -1,130 +1,213 @@
-/* General */
-body {
-    background-color: #f7f9f9;
-    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+/*
+STYLE.CSS for Yun Hsu Portfolio Site (Final Polished Version)
+*/
+
+/* Base Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Navigation */
+body {
+    font-family: 'Mukta', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation Bar */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 105px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav a {
+.nav-left {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.nav-right a {
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
 }
 
-/* Header */
-header#intro {
+.nav-link {
+    margin-left: 30px;
+    color: #666666;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #43B049;
+    border-bottom: 2px solid #43B049;
+}
+
+.contact-button {
+    margin-left: 40px;
+    padding: 6px 14px;
+    border: 2.5px solid #000000;
+    border-radius: 8px;
+    color: #000000;
+    font-weight: 600;
+    background-color: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+    height: auto;
+    min-height: 44px;
+}
+
+.contact-button:hover {
+    border-color: #43B049;
+    color: #43B049;
+    background-color: transparent;
+}
+
+/* Me Section */
+#me {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 6px solid #FFD700;
+    margin-bottom: 20px;
 }
 
-/* Section Titles */
-.section-title {
+h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: #111;
+    margin-bottom: 10px;
+    padding: 0 40px;
+    font-weight: 600;
+}
+
+.bio {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-weight: 500;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #444444;
+}
+
+p {
+    font-size: 1.1rem;
 }
 
 /* Projects Section */
+#projects {
+    padding: 60px 40px;
+    background-color: #EFF1EF;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    padding-left: 65px;
+}
+
 .projects-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 320px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-    cursor: pointer;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 0.95rem;
 }
 
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 1.5rem;
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 0.8rem 0;
-    color: #111;
+    margin-bottom: 10px;
 }
 
 .project-card p {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0;
+    margin-bottom: 15px;
 }
 
-/* Hover effect */
-.project-card:hover {
-    transform: scale(1.05) translateY(-5px);
-    border: 2px dotted #ccc;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.project-card a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-/* Power BI iframe */
+.project-card a:hover {
+    text-decoration: underline;
+}
+
 .powerbi-embed iframe {
     border: none;
-    margin-top: 1rem;
     border-radius: 8px;
-    width: 100%;
-    height: 400px;
+}
+
+/* Extra Section */
+#extra {
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
 /* Contact Section */
 #contact {
-    padding: 4rem 2rem;
-    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
-.social-icons {
-    margin-top: 1rem;
-}
-
-.social-icons a {
-    margin: 0 0.5rem;
+#contact a {
+    color: #0077cc;
     text-decoration: none;
-    font-weight: 600;
-    color: #333;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background-color: #fff;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
+    padding: 20px;
+    font-size: 0.9rem;
     color: #777;
 }
